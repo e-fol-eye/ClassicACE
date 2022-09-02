@@ -25,7 +25,7 @@ namespace ACE.Server.Factories
             var eleType = ThreadSafeRandom.Next(0, 4);
 
             if (weaponSkill == MeleeWeaponSkill.Undef)
-                if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+                if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
                     weaponSkill = (MeleeWeaponSkill)ThreadSafeRandom.Next(5, 11);
                 else
                     weaponSkill = (MeleeWeaponSkill)ThreadSafeRandom.Next(1, 4);
@@ -304,9 +304,9 @@ namespace ACE.Server.Factories
 
         private static string GetDamageScript(MeleeWeaponSkill weaponSkill, TreasureWeaponType weaponType)
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
             {
-                string ruleset = Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration ? "Infiltration" : "CustomDM";
+                string ruleset = Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM ? "CustomDM" : "Infiltration";
                 return $"MeleeWeapons.Damage_WieldDifficulty_DamageVariance.{ruleset}." + weaponType.GetScriptName() + ".txt";
             }
             else
@@ -315,9 +315,9 @@ namespace ACE.Server.Factories
 
         private static string GetOffenseDefenseScript(MeleeWeaponSkill weaponSkill, TreasureWeaponType weaponType)
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
             {
-                string ruleset = Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration ? "Infiltration" : "CustomDM";
+                string ruleset = Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM ? "CustomDM" : "Infiltration";
                 return $"MeleeWeapons.WeaponOffense_WeaponDefense.{ruleset}." + weaponType.GetScriptShortName() + "_offense_defense.txt";
             }
             else

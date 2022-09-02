@@ -657,7 +657,7 @@ namespace ACE.Server.WorldObjects
                             break;
                     }
                 }
-                else if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+                else if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
                 {
                     switch (heritageGroup)
                     {
@@ -711,7 +711,7 @@ namespace ACE.Server.WorldObjects
 
         public override bool GetHeritageBonus(WorldObject weapon)
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
                 return false;
 
             if (weapon == null || !weapon.IsMasterable)
@@ -990,7 +990,7 @@ namespace ACE.Server.WorldObjects
         }
         static Player()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.ThroneOfDestiny)
             {
                 AlwaysTrained.Remove(Skill.ArcaneLore);
 

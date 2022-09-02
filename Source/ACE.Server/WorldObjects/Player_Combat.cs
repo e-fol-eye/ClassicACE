@@ -75,7 +75,7 @@ namespace ACE.Server.WorldObjects
 
             var skill = ConvertToMoASkill(weapon.WeaponSkill);
 
-            if (Common.ConfigManager.Config.Server.WorldRuleset != Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset != Ruleset.Infiltration || Common.ConfigManager.Config.Server.WorldRuleset != Ruleset.ThroneOfDestiny)
             {
                 // DualWieldAlternate will be TRUE if *next* attack is offhand
                 if (IsDualWieldAttack && !DualWieldAlternate)
@@ -736,7 +736,7 @@ namespace ACE.Server.WorldObjects
         /// <param name="powerAccuracyBar">The 0.0 - 1.0 power/accurary bar</param>
         public float GetRecklessnessMod(/*float powerAccuracyBar*/)
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
                 return 1.0f;
 
             // ensure melee or missile combat mode

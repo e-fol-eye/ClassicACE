@@ -406,7 +406,7 @@ namespace ACE.Server.Factories.Tables
                 NumSpells = lifeSpells.Count + warSpells.Count;
                 Table = new SpellId[NumSpells][];
             }
-            else if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            else if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
             {
                 creatureSpells.Add(SpellId.SpearMasterySelf1);
                 creatureSpells.Add(SpellId.SpearMasteryOther1);

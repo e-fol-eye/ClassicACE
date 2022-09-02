@@ -35,7 +35,7 @@ namespace ACE.Server.Factories
             {
                 // Determine caster type: 1 - Sceptre, 2 - Baton, 3 - Staff
                 int casterType = ThreadSafeRandom.Next(1, LootTables.CasterWeaponsMatrix.Length - 1);
-                if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+                if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
                     // Determine element type: 0 - Slashing, 1 - Piercing, 2 - Blunt, 3 - Frost, 4 - Fire, 5 - Acid, 6 - Electric
                     element = ThreadSafeRandom.Next(0, 6);
                 else
@@ -231,9 +231,9 @@ namespace ACE.Server.Factories
         {
             var elementalStr = isElemental ? "elemental" : "non_elemental";
 
-            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
             {
-                string ruleset = Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration ? "Infiltration" : "CustomDM";
+                string ruleset = Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM ?  "CustomDM" : "Infiltration";
                 return $"Casters.{ruleset}.caster_{elementalStr}.txt";
             }
             else

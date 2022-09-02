@@ -26,6 +26,8 @@ namespace ACE.Server.Factories
                 starterGearFileName = "starterGear.customDM.json";
             else if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
                 starterGearFileName = "starterGear.infiltration.json";
+            else if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
+                starterGearFileName = "starterGear.tod.json";
 
             var starterGearFile = Path.Combine(exeLocation, starterGearFileName);
             var starterGearFileContainer = Path.Combine(containerConfigDirectory, starterGearFileName);

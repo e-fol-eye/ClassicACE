@@ -680,6 +680,20 @@ namespace ACE.Server.Factories
                     case 7: return 200; // EoR is 300
                 }
             }
+            else if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.ThroneOfDestiny)
+            {
+                switch (spell.Formula.Level)
+                {
+                    case 1: return 20; // EoR is 1
+                    case 2: return 50; // EoR is 50
+                    case 3: return 75; // EoR is 100
+                    case 4: return 125; // EoR is 150
+                    case 5: return 150; // EoR is 200
+                    case 6: return 180; // EoR is 250
+                    default:
+                    case 7: return 200; // EoR is 300
+                }
+            }
             else if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
             {
                 switch (spell.Formula.Level)
@@ -740,10 +754,10 @@ namespace ACE.Server.Factories
 
         private static void AddActivationRequirements(WorldObject wo, TreasureDeath profile, TreasureRoll roll)
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset != Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset != Common.Ruleset.Infiltration && Common.ConfigManager.Config.Server.WorldRuleset != Common.Ruleset.ThroneOfDestiny)
                 TryMutate_ItemSkillLimit(wo, roll); // ItemSkill/LevelLimit
 
-            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
             {
                 TryMutate_HeritageRequirement(wo, profile, roll);
                 TryMutate_AllegianceRequirement(wo, profile, roll);

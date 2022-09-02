@@ -42,7 +42,7 @@ namespace ACE.Server.Factories.Tables
 
         static WandSpells()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset <= Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Ruleset.ThroneOfDestiny)
             {
                 wandSpells = new List<(SpellId, float)>()
                 {

@@ -1625,7 +1625,12 @@ namespace ACE.Server.WorldObjects
                         Session.Network.EnqueueSend(new GameEventInventoryServerSaveFailed(Session, item.Guid.Full));
                         return false; // No dual wielding allowed in this ruleset.
                     }
-                    else if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
+                    else if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.ThroneOfDestiny)
+                    {
+                        Session.Network.EnqueueSend(new GameEventInventoryServerSaveFailed(Session, item.Guid.Full));
+                        return false; // No dual wielding allowed in this ruleset.
+                    }
+                    if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
                     {
                         if (GetCreatureSkill(Skill.DualWield).AdvancementClass < SkillAdvancementClass.Trained)
                         {

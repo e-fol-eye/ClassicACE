@@ -255,7 +255,7 @@ namespace ACE.Server.Managers
 
             if (character.TotalLogins <= 1)
             {
-            	if (ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            	if (ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
                 {
                     // Automatically use the welcome letter so it's already open for the new player to read.
                     WorldObject welcomeLetter = player.Inventory.Values.FirstOrDefault(i => i.WeenieClassId == 1077);

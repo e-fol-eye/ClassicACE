@@ -29,6 +29,8 @@ namespace ACE.Server.WorldObjects
                 case ACE.Entity.Enum.Skill.UnarmedCombat:
                     if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
                         factor = UnarmedMod;
+                    else if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.ThroneOfDestiny)
+                        factor = UnarmedMod;
                     break;
                 default:
                     factor = DefaultMod;

@@ -297,7 +297,7 @@ namespace ACE.Server.WorldObjects
             var attackType = GetWeaponAttackType(weapon);
             var numStrikes = GetNumStrikes(attackType);
 
-            if (numStrikes > 1 && Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (numStrikes > 1 && Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
             {
                 if (PowerLevel < MultiStrikeThreshold)
                     numStrikes = 1;
@@ -480,7 +480,7 @@ namespace ACE.Server.WorldObjects
                 AttackType = PowerLevel > KickThreshold ? AttackType.Kick : AttackType.Punch;
             }
 
-            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
             {
                 if (AttackType.IsMultiStrike())
                 {

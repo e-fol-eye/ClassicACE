@@ -1142,6 +1142,15 @@ namespace ACE.Server.Command.Handlers
                         session.Player.LearnSpellsInBulk(MagicSchool.WarMagic, spellLevel);
                     }
                     break;
+                case Common.Ruleset.ThroneOfDestiny:
+                    for (uint spellLevel = 1; spellLevel <= 7; spellLevel++)
+                    {
+                        session.Player.LearnSpellsInBulk(MagicSchool.CreatureEnchantment, spellLevel);
+                        session.Player.LearnSpellsInBulk(MagicSchool.ItemEnchantment, spellLevel);
+                        session.Player.LearnSpellsInBulk(MagicSchool.LifeMagic, spellLevel);
+                        session.Player.LearnSpellsInBulk(MagicSchool.WarMagic, spellLevel);
+                    }
+                    break;
             }
         }
 

@@ -337,7 +337,7 @@ namespace ACE.Server.Entity
         {
             get
             {
-                if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+                if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
                     return false;
                 else
                 {

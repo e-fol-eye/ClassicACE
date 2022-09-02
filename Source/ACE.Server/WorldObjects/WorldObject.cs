@@ -1047,7 +1047,7 @@ namespace ACE.Server.WorldObjects
                     default: return skill;
                 }
             }
-            else if (ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            else if (ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
                 return skill;
             else
             {

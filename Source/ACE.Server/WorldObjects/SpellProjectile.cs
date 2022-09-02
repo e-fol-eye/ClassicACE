@@ -557,7 +557,7 @@ namespace ACE.Server.WorldObjects
                 }
                 baseDamage = ThreadSafeRandom.Next(Spell.MinDamage, Spell.MaxDamage);
                 
-                if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+                if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
                 {
                     if (sourcePlayer == null)
                         baseDamage /= 2; // Monsters do half projectile spell damage.
@@ -606,7 +606,7 @@ namespace ACE.Server.WorldObjects
                     var shield = target.GetEquippedShield();
                     if (shield != null && shield.GetAbsorbMagicDamage() != null)
                  	{
-                        if (Common.ConfigManager.Config.Server.WorldRuleset != Common.Ruleset.Infiltration)
+                        if (Common.ConfigManager.Config.Server.WorldRuleset != Common.Ruleset.Infiltration && Common.ConfigManager.Config.Server.WorldRuleset != Common.Ruleset.ThroneOfDestiny)
                             return GetShieldMod(target, shield);
                         else
                             return AbsorbMagic(target, shield);

@@ -91,7 +91,7 @@ namespace ACE.Server.Network.Structure
             var speedMod = weapon.EnchantmentManager.GetWeaponSpeedMod();
             var auraSpeedMod = weapon.Wielder != null ? weapon.Wielder.EnchantmentManager.GetWeaponSpeedMod() : 0;
 
-            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
             {
                 var multSpeedMod = weapon.EnchantmentManager.GetWeaponMultiplicativeSpeedMod();
 

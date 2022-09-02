@@ -42,7 +42,7 @@ namespace ACE.Server.Factories.Tables.Wcids
                 case TreasureWeaponType.Staff:
                 case TreasureWeaponType.Sword:
                 case TreasureWeaponType.Unarmed:
-                    if (ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+                    if (ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
                     {
                         switch (treasureRoll.WeaponType)
                         {

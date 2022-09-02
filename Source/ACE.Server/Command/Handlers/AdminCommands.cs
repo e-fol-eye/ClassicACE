@@ -2976,6 +2976,8 @@ namespace ACE.Server.Command.Handlers
                     correctLength = 230;
                 else if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
                     correctLength = 230;
+                else if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
+                    correctLength = 230;
 
                 // Check string is correctly formatted before altering stats
                 // correctly formatted return string should have 240 entries
@@ -3074,6 +3076,8 @@ namespace ACE.Server.Command.Handlers
                     if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
                         correctLength = 230;
                     else if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+                        correctLength = 230;
+                    else if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
                         correctLength = 230;
 
                     // correctly formatted return string should have 240 entries

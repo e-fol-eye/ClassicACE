@@ -346,7 +346,7 @@ namespace ACE.Server.Factories
 
                 var cantripLevels = SpellLevelProgression.GetSpellLevels(cantrip);
 
-                if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+                if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
                 {
                     if (cantripLevels.Count < 2)
                     {
@@ -476,7 +476,7 @@ namespace ACE.Server.Factories
 
         private static SpellId AdjustForWeaponMastery(WorldObject wo)
         {
-            if (ConfigManager.Config.Server.WorldRuleset != Ruleset.Infiltration && wo.WeaponSkill != Skill.TwoHandedCombat && wo.WeaponSkill != Skill.MissileWeapons)
+            if (ConfigManager.Config.Server.WorldRuleset != Ruleset.Infiltration && wo.WeaponSkill != Skill.TwoHandedCombat && wo.WeaponSkill != Skill.MissileWeapons && ConfigManager.Config.Server.WorldRuleset != Ruleset.ThroneOfDestiny)
             {
                 // 10% chance to adjust to dual wielding
                 var rng = ThreadSafeRandom.Next(0.0f, 1.0f);
@@ -523,7 +523,7 @@ namespace ACE.Server.Factories
 
         private static SpellId AdjustForDamageType(WorldObject wo, SpellId spell)
         {
-            if (ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
                 return SpellId.CANTRIPWARMAGICAPTITUDE1;
 
             if (wo.W_DamageType == DamageType.Nether)

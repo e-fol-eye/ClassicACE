@@ -206,9 +206,9 @@ namespace ACE.Server.Factories
 
         private static string GetMutationScript_ArmorLevel(WorldObject wo, TreasureRoll roll)
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
             {
-                string ruleset = Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration ? "Infiltration" : "CustomDM";
+                string ruleset = Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM ? "CustomDM" : "Infiltration";
                 if (roll.ArmorType == TreasureArmorType.Covenant)
                 {
                     if (wo.IsShield)

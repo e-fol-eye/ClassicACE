@@ -25,6 +25,12 @@ namespace ACE.DatLoader
         private static int INFILTRATION_ITERATION_HIRES = 497;
         private static int INFILTRATION_ITERATION_LANGUAGE = 10002;
 
+        public static string TOD_CLIENT_VERSION_STRING = "i103";
+        private static int TOD_ITERATION_CELL = 10001;
+        private static int TOD_ITERATION_PORTAL = 10005;
+        private static int TOD_ITERATION_HIRES = 497;
+        private static int TOD_ITERATION_LANGUAGE = 10002;
+
         public static string CUSTOMDM_CLIENT_VERSION_STRING = "c104";
         private static int CUSTOMDM_ITERATION_CELL = 20002;
         private static int CUSTOMDM_ITERATION_PORTAL = 20011;
@@ -63,6 +69,12 @@ namespace ACE.DatLoader
                     portalExpectedIteration = CUSTOMDM_ITERATION_PORTAL;
                     highResExpectedIteration = CUSTOMDM_ITERATION_HIRES;
                     languageExpectedIteration = CUSTOMDM_ITERATION_LANGUAGE;
+                    break;
+                case Common.Ruleset.ThroneOfDestiny:
+                    cellExpectedIteration = TOD_ITERATION_CELL;
+                    portalExpectedIteration = TOD_ITERATION_PORTAL;
+                    highResExpectedIteration = TOD_ITERATION_HIRES;
+                    languageExpectedIteration = TOD_ITERATION_LANGUAGE;
                     break;
             }
 

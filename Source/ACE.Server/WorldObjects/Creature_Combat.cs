@@ -504,7 +504,7 @@ namespace ACE.Server.WorldObjects
             Entity.CreatureAttribute attribute;
             if (ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
                 attribute = isBow || weapon?.WeaponSkill == Skill.Dagger || weapon?.WeaponSkill == Skill.Spear || weapon?.WeaponSkill == Skill.Staff ? Coordination : Strength;
-            else if (ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            else if (ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
                 attribute = isBow || weapon?.WeaponSkill == Skill.Dagger ? Coordination : Strength;
             else
                 attribute = isBow || weapon?.WeaponSkill == Skill.FinesseWeapons ? Coordination : Strength;
@@ -519,7 +519,7 @@ namespace ACE.Server.WorldObjects
         }
         public virtual int GetUnarmedSkillDamageBonus()
         {
-            if (IsHumanoid && ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration && GetCurrentWeaponSkill() == Skill.UnarmedCombat) // Non humanoids(creatures that aren't able to wield weapons) do not get a damage bonus based on skill.
+            if (IsHumanoid && ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny && GetCurrentWeaponSkill() == Skill.UnarmedCombat) // Non humanoids(creatures that aren't able to wield weapons) do not get a damage bonus based on skill.
             {
                 var skill = GetCreatureSkill(Skill.UnarmedCombat).Current;
 
@@ -888,7 +888,7 @@ namespace ACE.Server.WorldObjects
         /// </summary>
         public static float GetRecklessnessMod(Creature attacker, Creature defender)
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
                 return 1.0f;
 
             var playerAttacker = attacker as Player;
@@ -911,7 +911,7 @@ namespace ACE.Server.WorldObjects
 
         public float GetSneakAttackMod(WorldObject target)
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration || Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.ThroneOfDestiny)
                 return 1.0f;
             else if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
             {

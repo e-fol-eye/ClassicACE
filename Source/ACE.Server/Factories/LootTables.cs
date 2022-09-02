@@ -2464,7 +2464,7 @@ namespace ACE.Server.Factories
 
         static LootTables()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration) // Override default EoR values
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny) // Override default EoR values
             {
                 MeleeWeaponsMatrices = new List<int[][]>()
                 {

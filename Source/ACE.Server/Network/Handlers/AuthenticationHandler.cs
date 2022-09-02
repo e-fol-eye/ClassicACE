@@ -194,6 +194,9 @@ namespace ACE.Server.Network.Handlers
                 case Common.Ruleset.Infiltration:
                     requiredClientVersionString = DatLoader.DatManager.INFILTRATION_CLIENT_VERSION_STRING;
                     break;
+                case Common.Ruleset.ThroneOfDestiny:
+                    requiredClientVersionString = DatLoader.DatManager.INFILTRATION_CLIENT_VERSION_STRING;
+                    break;
                 case Common.Ruleset.CustomDM:
                     requiredClientVersionString = DatLoader.DatManager.CUSTOMDM_CLIENT_VERSION_STRING;
                     break;

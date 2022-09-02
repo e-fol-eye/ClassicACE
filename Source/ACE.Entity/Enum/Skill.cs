@@ -109,7 +109,7 @@ namespace ACE.Entity.Enum
     {
         static SkillHelper()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration || Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.ThroneOfDestiny )
             {
                 ValidSkills.Remove(Skill.TwoHandedCombat);
                 ValidSkills.Remove(Skill.HeavyWeapons);

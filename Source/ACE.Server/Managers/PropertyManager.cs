@@ -502,7 +502,18 @@ namespace ACE.Server.Managers
                 PropertyManager.ModifyBool("show_dat_warning", true);
                 PropertyManager.ModifyString("dat_warning_msg", "The location you are attempting to enter is not present in your data files.");
             }
-            else if(Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
+            else if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.ThroneOfDestiny)
+            {
+                PropertyManager.ModifyBool("item_dispel", true);
+                PropertyManager.ModifyBool("vendor_shop_uses_generator", true);
+                PropertyManager.ModifyBool("allow_xp_at_max_level", true);
+
+                PropertyManager.ModifyLong("max_level", 126);
+
+                PropertyManager.ModifyBool("show_dat_warning", true);
+                PropertyManager.ModifyString("dat_warning_msg", "The location you are attempting to enter is not present in your data files.");
+            }
+            else if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
             {
                 PropertyManager.ModifyBool("item_dispel", true);
                 PropertyManager.ModifyBool("vendor_shop_uses_generator", true);

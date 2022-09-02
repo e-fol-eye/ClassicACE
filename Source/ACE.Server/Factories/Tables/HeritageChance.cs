@@ -192,7 +192,7 @@ namespace ACE.Server.Factories.Tables
         };
         static HeritageChance()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
             {
                 heritageProfiles = new List<ChanceTable<TreasureHeritageGroup>>()
                 {
@@ -226,7 +226,7 @@ namespace ACE.Server.Factories.Tables
                 return treasureRoll.Heritage; // We have already been assigned an heritage, use that.
             else
             {
-                if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+                if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
                     addViamontian = false;
 
                 if (heritageProfile < 1 || heritageProfile > heritageProfiles.Count)

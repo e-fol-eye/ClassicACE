@@ -77,6 +77,12 @@ namespace ACE.Server.Network.Handlers
                 session.Network.EnqueueSend(new GameEvent.Events.GameEventPopupString(session, "Only Aluvian, Gharu'ndim and Sho heritages are allowed on this server."));
                 return;
             }
+            if (ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny && characterCreateInfo.Heritage != HeritageGroup.Aluvian && characterCreateInfo.Heritage != HeritageGroup.Gharundim && characterCreateInfo.Heritage != HeritageGroup.Sho && characterCreateInfo.Heritage != HeritageGroup.Viamontian)
+            {
+                SendCharacterCreateResponse(session, CharacterGenerationVerificationResponse.Pending);
+                session.Network.EnqueueSend(new GameEvent.Events.GameEventPopupString(session, "Only Viamontian, Aluvian, Gharu'ndim and Sho heritages are allowed on this server."));
+                return;
+            }
 
             // Disable OlthoiPlay characters for now. They're not implemented yet.
             // FIXME: Restore OlthoiPlay characters when properly handled.

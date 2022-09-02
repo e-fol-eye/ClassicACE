@@ -86,7 +86,7 @@ namespace ACE.Server.Factories.Tables
 
         static SpellLevelChance()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
             {
                 T1_SpellLevelChances = new ChanceTable<int>()
                 {

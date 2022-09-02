@@ -216,7 +216,7 @@ namespace ACE.Server.Factories.Tables
                     T8_Chances
                 };
             }
-            else if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            else if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
             {
                 T1_Chances = new ChanceTable<TreasureArmorType>()
                 {

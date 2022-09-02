@@ -48,6 +48,20 @@ namespace ACE.Server.Factories
                     (2000, 5000), // T8
                 };
             }
+            else if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.ThroneOfDestiny)
+            {
+                coinRanges = new List<(int, int)>()
+                {
+                    (  50,  100), // T1
+                    ( 400, 1000), // T2
+                    ( 800, 2000), // T3
+                    (1200, 4000), // T4
+                    (2000, 5000), // T5
+                    (2000, 5000), // T6
+                    (2000, 5000), // T7
+                    (2000, 5000), // T8
+                };
+            }
             else if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
             {
                 coinRanges = new List<(int, int)>()
@@ -169,7 +183,7 @@ namespace ACE.Server.Factories
                     return tweakedDeathTreasure;
                 }
 
-                if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+                if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration || Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.ThroneOfDestiny)
                 {
                     // Fix for mismatched high tier containers and generators in low level places, CustomDM has these fixed in the data files themselves.
                     switch (deathTreasureId)
@@ -589,7 +603,7 @@ namespace ACE.Server.Factories
 
         private static WorldObject TryRollMundaneAddon(TreasureDeath profile)
         {
-            if (ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
                 return null;
 
             // coalesced mana only dropped in tiers 1-4

@@ -152,9 +152,9 @@ namespace ACE.Server.Factories
         {
             var elementalStr = isElemental ? "elemental" : "non_elemental";
 
-            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
             {
-                string ruleset = Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration ? "Infiltration" : "CustomDM";
+                string ruleset = Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM ? "CustomDM" : "Infiltration";
                 return $"MissileWeapons.{ruleset}." + weaponType.GetScriptName() + "_" + elementalStr + ".txt";
             }
             else

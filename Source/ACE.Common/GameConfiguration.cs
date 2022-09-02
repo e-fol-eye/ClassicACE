@@ -10,7 +10,7 @@ namespace ACE.Common
         //DarkMajesty,            // October 2001
         CustomDM,
         Infiltration,           // February 2005
-        //ThroneOfDestiny,        // July 2005
+        ThroneOfDestiny,        // July 2005(2008 goal)
         //FromDarknessLight,      // November 2010 - Void Magic
         //MasterOfDesign,         // November 2011 - Innate Augmentations
         //MasterOfArms,           // February 2012 - New weapon skills
@@ -68,7 +68,7 @@ namespace ACE.Common
         /// <summary>
         /// Determines which era's ruleset to use.
         /// </summary>
-        [System.ComponentModel.DefaultValue(Ruleset.EoR)]
+        [System.ComponentModel.DefaultValue(Ruleset.ThroneOfDestiny)]
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Populate)]
         public Ruleset WorldRuleset { get; set; }
     }

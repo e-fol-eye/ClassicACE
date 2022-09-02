@@ -201,7 +201,7 @@ namespace ACE.Server.WorldObjects
 
         public int GetDamageRating()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
                 return 0;
 
             // get from base properties (monsters)?
@@ -232,7 +232,7 @@ namespace ACE.Server.WorldObjects
 
         public int GetDamageResistRating(CombatType? combatType = null, bool directDamage = true)
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
                 return 0;
 
             // get from base properties (monsters)?
@@ -264,7 +264,7 @@ namespace ACE.Server.WorldObjects
 
         public float GetDamageResistRatingMod(CombatType? combatType = null, bool directDamage = true)
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
                 return 1;
 
             var damageResistRating = GetDamageResistRating(combatType, directDamage);
@@ -305,7 +305,7 @@ namespace ACE.Server.WorldObjects
         {
             // crit chance
 
-            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
                 return 0;
 
             // get from base properties (monsters)?
@@ -325,7 +325,7 @@ namespace ACE.Server.WorldObjects
 
         public int GetCritDamageRating()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
                 return 0;
 
             // get from base properties (monsters)?
@@ -354,7 +354,7 @@ namespace ACE.Server.WorldObjects
         {
             // crit resist chance
 
-            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
                 return 0;
 
             // get from base properties (monsters)?
@@ -369,7 +369,7 @@ namespace ACE.Server.WorldObjects
 
         public int GetCritDamageResistRating()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
                 return 0;
 
             // get from base properties (monsters)?
@@ -390,7 +390,7 @@ namespace ACE.Server.WorldObjects
 
         public int GetHealingBoostRating()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
                 return 0;
 
             // get from base properties (monsters)?
@@ -411,7 +411,7 @@ namespace ACE.Server.WorldObjects
 
         public int GetHealingResistRating()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
                 return 0;
 
             // debuff?
@@ -425,7 +425,7 @@ namespace ACE.Server.WorldObjects
 
         public float GetHealingRatingMod()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
                 return 1;
 
             var boostMod = GetPositiveRatingMod(GetHealingBoostRating());
@@ -436,7 +436,7 @@ namespace ACE.Server.WorldObjects
 
         public int GetLifeResistRating()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
                 return 0;
 
             // only affects health drain?
@@ -458,7 +458,7 @@ namespace ACE.Server.WorldObjects
 
         public int GetDotResistanceRating()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
                 return 0;
 
             // get from base properties (monsters)?
@@ -472,7 +472,7 @@ namespace ACE.Server.WorldObjects
 
         public int GetNetherResistRating()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
                 return 0;
 
             // there is a property defined for this,

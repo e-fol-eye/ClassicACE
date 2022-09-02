@@ -57,7 +57,7 @@ namespace ACE.Server.Factories.Tables
 
         public static int Roll(TreasureDeath profile)
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration && profile.TreasureType == 338) // Steel Chest
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny && profile.TreasureType == 338) // Steel Chest
                 return 7;
 
             var table = scrollLevelChances[profile.Tier - 1];
@@ -67,7 +67,7 @@ namespace ACE.Server.Factories.Tables
 
         static ScrollLevelChance()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
             {
                 T1_ScrollLevelChances = new ChanceTable<int>()
                 {

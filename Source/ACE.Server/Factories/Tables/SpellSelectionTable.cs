@@ -720,7 +720,7 @@ namespace ACE.Server.Factories.Tables
                     spellSelectionGroup20,
                 };
             }
-            else if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            else if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
             {
                 // orbs
                 spellSelectionGroup4 = new ChanceTable<SpellId>()

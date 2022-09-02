@@ -72,7 +72,7 @@ namespace ACE.Server.Factories.Tables.Wcids
         {
             var roll = crossbowTiers[tier - 1].Roll();
 
-            if (roll == WeenieClassName.crossbowlight && Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (roll == WeenieClassName.crossbowlight && Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
                 weaponType = TreasureWeaponType.CrossbowLight; // Modify weapon type so we get correct mutations.
             else
                 weaponType = TreasureWeaponType.Crossbow;
@@ -135,6 +135,58 @@ namespace ACE.Server.Factories.Tables.Wcids
 		            T6_T8_Chances,
 		            T6_T8_Chances,
 		        };
+            }
+            else if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.ThroneOfDestiny)
+            {
+                T1_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.crossbowlight,    3.0f ),
+                    ( WeenieClassName.crossbowheavy,    1.0f ),
+                };
+
+                T1_T4_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.crossbowlight,    1.00f ),
+                    ( WeenieClassName.crossbowheavy,    1.00f ),
+                };
+
+                T5_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.crossbowlight,                     4.0f ),
+                    ( WeenieClassName.crossbowheavy,                     4.0f ),
+
+                    ( WeenieClassName.crossbowslashing,                  1.0f ),
+                    ( WeenieClassName.crossbowpiercing,                  1.0f ),
+                    ( WeenieClassName.crossbowblunt,                     1.0f ),
+                    ( WeenieClassName.crossbowacid,                      1.0f ),
+                    ( WeenieClassName.crossbowfire,                      1.0f ),
+                    ( WeenieClassName.crossbowfrost,                     1.0f ),
+                    ( WeenieClassName.crossbowelectric,                  1.0f ),
+                };
+
+                T6_T8_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.crossbowslashing,                  1.0f ),
+                    ( WeenieClassName.crossbowpiercing,                  1.0f ),
+                    ( WeenieClassName.crossbowblunt,                     1.0f ),
+                    ( WeenieClassName.crossbowacid,                      1.0f ),
+                    ( WeenieClassName.crossbowfire,                      1.0f ),
+                    ( WeenieClassName.crossbowfrost,                     1.0f ),
+                    ( WeenieClassName.crossbowelectric,                  1.0f ),
+                };
+
+                // we have to refresh this list or it will still contain the previous values.
+                crossbowTiers = new List<ChanceTable<WeenieClassName>>()
+                {
+                    T1_Chances,
+                    T1_T4_Chances,
+                    T1_T4_Chances,
+                    T1_T4_Chances,
+                    T5_Chances,
+                    T6_T8_Chances,
+                    T6_T8_Chances,
+                    T6_T8_Chances,
+                };
             }
             else if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
             {
