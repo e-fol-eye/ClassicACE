@@ -15,9 +15,9 @@ namespace ACE.Server.Tests
         public void CanParseStarterGearJson()
         {
             string contents = File.ReadAllText("../../../../../ACE.Server/starterGear.json");
-            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
                 contents = File.ReadAllText("../../../../../ACE.Server/starterGear.infiltration.json");
-            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.ThroneOfDestiny)
+            else if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.ThroneOfDestiny)
                 contents = File.ReadAllText("../../../../../ACE.Server/starterGear.tod.json");
             else if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
                 contents = File.ReadAllText("../../../../../ACE.Server/starterGear.customDM.json");
